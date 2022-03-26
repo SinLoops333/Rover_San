@@ -1,0 +1,187 @@
+<?xml version="1.0" ?>
+<robot name="4WD" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find rover_san)/urdf/materials.xacro" />
+<!--<xacro:include filename="$(find rover_san)/urdf/4WD.trans" />-->
+
+<xacro:include filename="$(find rover_san)/gazebo/physics.gazebo" />
+<xacro:include filename="$(find rover_san)/gazebo/materials.gazebo" />
+<xacro:include filename="$(find rover_san)/gazebo/plugins.gazebo" />
+
+
+
+<link name="base_link">
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://rover_san/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://rover_san/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="frt_1">
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.133879 0.174622 -0.133743"/>
+    <geometry>
+      <mesh filename="package://rover_san/meshes/frt_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.133879 0.174622 -0.133743"/>
+    <geometry>
+      <mesh filename="package://rover_san/meshes/frt_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="brt_1">
+  <visual>
+    <origin rpy="0 0 0" xyz="0.149621 0.176622 -0.133743"/>
+    <geometry>
+      <mesh filename="package://rover_san/meshes/brt_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.149621 0.176622 -0.133743"/>
+    <geometry>
+      <mesh filename="package://rover_san/meshes/brt_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="flt_1">
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.133879 -0.191378 -0.133743"/>
+    <geometry>
+      <mesh filename="package://rover_san/meshes/flt_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.133879 -0.191378 -0.133743"/>
+    <geometry>
+      <mesh filename="package://rover_san/meshes/flt_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="blt_1">
+  <visual>
+    <origin rpy="0 0 0" xyz="0.149621 -0.193378 -0.133743"/>
+    <geometry>
+      <mesh filename="package://rover_san/meshes/blt_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.149621 -0.193378 -0.133743"/>
+    <geometry>
+      <mesh filename="package://rover_san/meshes/blt_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="camera_link">
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.20057 -0.0 -0.27566"/>
+    <geometry>
+      <mesh filename="package://rover_san/meshes/Camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.20057 -0.0 -0.27566"/>
+    <geometry>
+      <mesh filename="package://rover_san/meshes/Camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_base_1">
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.179596 -8e-06 -0.299905"/>
+    <geometry>
+      <mesh filename="package://rover_san/meshes/lidar_base_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.179596 -8e-06 -0.299905"/>
+    <geometry>
+      <mesh filename="package://rover_san/meshes/lidar_base_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.179605 -8e-06 -0.319905"/>
+    <geometry>
+      <mesh filename="package://rover_san/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.179605 -8e-06 -0.319905"/>
+    <geometry>
+      <mesh filename="package://rover_san/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rev23" type="continuous">
+  <origin rpy="0 0 0" xyz="0.133879 -0.174622 0.133743"/>
+  <parent link="base_link"/>
+  <child link="frt_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rev24" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.149621 -0.176622 0.133743"/>
+  <parent link="base_link"/>
+  <child link="brt_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rev25" type="continuous">
+  <origin rpy="0 0 0" xyz="0.133879 0.191378 0.133743"/>
+  <parent link="base_link"/>
+  <child link="flt_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rev26" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.149621 0.193378 0.133743"/>
+  <parent link="base_link"/>
+  <child link="blt_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rigid27" type="fixed">
+  <origin rpy="0 0 0" xyz="0.20057 0.0 0.27566"/>
+  <parent link="base_link"/>
+  <child link="camera_link"/>
+</joint>
+
+<joint name="Rigid28" type="fixed">
+  <origin rpy="0 0 0" xyz="0.179596 8e-06 0.299905"/>
+  <parent link="base_link"/>
+  <child link="lidar_base_1"/>
+</joint>
+
+<joint name="Rigid29" type="fixed">
+  <origin rpy="0 0 0" xyz="9e-06 0.0 0.02"/>
+  <parent link="lidar_base_1"/>
+  <child link="lidar_1"/>
+</joint>
+
+</robot>
