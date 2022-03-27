@@ -1,15 +1,15 @@
-# Rover_San
-Rover Navigation
+# Rover San
+# Rover Navigation
 
 
-Intro
+## Intro
 
 Lidar being used is  the Slamtec RPLidar S1 
 Depth camera is the Intel realsense D435i
 Vehicle is the RoverRobotics 4WD Rover Zero 3 
 Chasis is the Rover Robotics R&D Payload
 
-Dependencies
+## Dependencies
 
 cd  catkin_ws/src
 
