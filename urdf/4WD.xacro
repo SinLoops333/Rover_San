@@ -173,7 +173,7 @@
 </joint>
 
 <joint name="Rigid28" type="fixed">
-  <origin rpy="0 0 0" xyz="0.179596 8e-06 0.299905"/>
+  <origin rpy="0 0 3.14" xyz="0.179596 8e-06 0.299905"/>
   <parent link="base_link"/>
   <child link="lidar_base_1"/>
 </joint>
