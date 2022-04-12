@@ -1,0 +1,9 @@
+<launch>
+   <!-- <group if="$(eval arg('mode') == 'navigate')"> -->
+        <!-- Gmapping -->
+        <node pkg="gmapping" type="slam_gmapping" name="rover_san" output="screen">
+            <param name="model" value="model"/>
+            <rosparam command="load" file="$(find rover_san)/config/gmapping.yaml" />
+        </node>
+   <!-- </group> -->
+</launch>
