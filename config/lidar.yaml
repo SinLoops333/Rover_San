@@ -1,0 +1,5 @@
+serial_port: /dev/rplidar
+serial_baudrate: 256000
+frame_id: lidar_1
+inverted: false
+angle_compensate: true
